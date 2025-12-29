@@ -8,6 +8,7 @@ import Home from "./components/Home.jsx";
 import AddCoffee from "./components/AddCoffee.jsx";
 import UpdateCoffee from "./components/UpdateCoffee.jsx";
 import Header from "./components/Header.jsx";
+import Notice from "./components/Notice.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        loader: () => fetch("http://localhost:3000/coffees"),
         Component: Home
       },
       {
@@ -28,6 +30,11 @@ const router = createBrowserRouter([
       {
         path: "/header",
         Component: Header
+      },
+      {
+        path: "/notice/:id",
+        loader: ({ params }) => fetch(`http://localhost:3000/coffees/${params.id}`),
+        Component: Notice
       }
     ],
   },

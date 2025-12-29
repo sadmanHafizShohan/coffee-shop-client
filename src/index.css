@@ -1,7 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Rancho&display=swap');
+@import "tailwindcss";
+
 
 @theme {
   --font-rancho: "Rancho", cursive;
+  --font-raleway: "Raleway", sans-serif;
+   --color-coffee: #331A15;
+   --color-coffee-light: #E3B577;
 }
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @plugin "daisyui";
